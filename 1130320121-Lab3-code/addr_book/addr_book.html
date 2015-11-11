@@ -1,0 +1,17 @@
+﻿<h1 align="center">图书管理</h1>
+<table border=1 align="center">
+ <tr>
+  <th>ISBN</th><th>Title</th><th>  </th><th>  </th>
+ </tr>
+{% for book in book_list %}
+ <tr>
+  <td><a href=detail/?book_ISBN={{book.ISBN}}>{{book.ISBN}}</a></td>
+  <td><a href=detail/?book_ISBN={{book.ISBN}}>{{book.Title}}</a></td>
+  <td><a href=delete/?book_ISBN={{book.ISBN}}>删除</a></td>
+  <td><a href=update/?book_ISBN={{book.ISBN}}>更新</a></td>	
+ </tr>
+{% endfor %}
+</table>
+<div align="center">
+<a href="/">返回主界面</a>
+</div>

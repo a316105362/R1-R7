@@ -1,0 +1,29 @@
+﻿<p align="center">您查找的是: <strong>{{ query }}</strong></p>
+{% if author %}
+{% if book %}
+<table border=1 align="center">
+ <tr>
+  <th>ISBN</th><th>Title</th><th>  </th><th>  </th>
+ </tr>
+ <tr>
+<p align="center">该作者所著书籍如下</p>
+{% for b in book %}
+  <td><a href=/glance/detail/?book_ISBN={{b.ISBN}}>{{b.ISBN}}</a></td>
+  <td><a href=/glance/detail/?book_ISBN={{b.ISBN}}>{{b.Title}}</a></td>
+  <td><a href=/glance/delete/?book_ISBN={{b.ISBN}}>删除</a></td>
+  <td><a href=/glance/update/?book_ISBN={{b.ISBN}}>更新</a></td>
+ </tr>
+{% endfor %}
+</table>
+{% else %}
+    <p align="center">该作者存在，但没有相关书籍</p>
+{% endif %}
+<div align="center">
+<a href="/search_form/">返回</a>
+</div>
+{% else %}
+    <p align="center">对不起，没有这个作者。</p>
+    <div align="center">
+    <a href="/search_form/">返回</a>
+    </div>
+{% endif %}

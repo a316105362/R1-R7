@@ -1,0 +1,18 @@
+﻿<h1 align="center">更新图书</h1>
+<form action = /glance/upda_author/?ISBN={{ p.ISBN }} method="post">
+<table border=1 align="center">
+ <tr>
+  <th>AuthorID</th><th>Publisher</th><th>PublishDate</th><th>Price</th>
+ </tr>
+ <tr>
+  <td><input value={{ p.AuthorID.AuthorID }} name="AuthorID" type="text"></td>
+  <td><input value={{ p.Publisher }} name="Publisher" type="text"></td>
+  <td><input value={{ p.PublishDate }} name="PublishDate" type="text"></td>
+  <td><input value={{ p.Price }} name="Price" type="text"></td>
+  <td><input type="submit" value="保存"> </td>
+ </tr>
+</table>
+</form>
+<div align="center">
+<a href="/glance/">返回</a>
+</div>
